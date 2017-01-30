@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="455" height="228"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="455" height="227.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="455" height="227"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Rq-vd-3Kn" userLabel="Top Container">
@@ -116,6 +116,9 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.14086372049821327" blue="0.14377794067250749" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="37.5" id="gaH-4U-jgz"/>
+                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
@@ -134,6 +137,13 @@
                     <constraint firstItem="v2I-Bd-Eqr" firstAttribute="top" secondItem="4Rq-vd-3Kn" secondAttribute="bottom" id="uXZ-4E-Yew"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="contentLabel" destination="TE0-xm-30y" id="wnB-0w-Fm4"/>
+                <outlet property="handleLabel" destination="5es-uG-Lqw" id="oB4-nY-HXd"/>
+                <outlet property="nameLabel" destination="Wxd-NY-MfQ" id="Nka-dt-cqe"/>
+                <outlet property="profileImageView" destination="brK-yZ-4tF" id="cT0-7T-TlO"/>
+                <outlet property="timestampLabel" destination="MY4-Vu-wB5" id="cgL-fx-Nad"/>
+            </connections>
             <point key="canvasLocation" x="-64.5" y="100"/>
         </tableViewCell>
     </objects>
