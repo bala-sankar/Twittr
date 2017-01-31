@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "TweetListViewController.h"
+#import "LoginViewController.h"
 
 @interface AppDelegate ()
 
@@ -18,9 +19,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     TweetListViewController *viewController = [[TweetListViewController alloc] initWithNibName:@"TweetListViewController" bundle:nil];
+    LoginViewController *loginController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
     CGRect frame = [UIScreen mainScreen].bounds;
     self.window = [[UIWindow alloc] initWithFrame:frame];
-    self.window.rootViewController = viewController;
+    self.window.rootViewController = loginController;
     [self.window makeKeyAndVisible];
     return YES;
 }
