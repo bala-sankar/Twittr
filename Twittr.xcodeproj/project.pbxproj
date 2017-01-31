@@ -91,14 +91,14 @@
 				0CD5666A1E3FC872007FBBCC /* TweetTableViewCell.h */,
 				0CD5666B1E3FC872007FBBCC /* TweetTableViewCell.m */,
 			);
-			name = controllers;
+			path = controllers;
 			sourceTree = "<group>";
 		};
 		0CD566671E3FBA0C007FBBCC /* models */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = models;
+			path = models;
 			sourceTree = "<group>";
 		};
 		0CD566681E3FBA70007FBBCC /* views */ = {
@@ -107,7 +107,7 @@
 				0CD566631E3FB9C6007FBBCC /* TweetListViewController.xib */,
 				0CD5666C1E3FC872007FBBCC /* TweetTableViewCell.xib */,
 			);
-			name = views;
+			path = views;
 			sourceTree = "<group>";
 		};
 		0CD566691E3FC360007FBBCC /* application */ = {
@@ -116,7 +116,7 @@
 				0CD5664D1E3FB923007FBBCC /* AppDelegate.h */,
 				0CD5664E1E3FB923007FBBCC /* AppDelegate.m */,
 			);
-			name = application;
+			path = application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
