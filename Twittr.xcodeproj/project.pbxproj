@@ -15,7 +15,7 @@
 		0CD566641E3FB9C6007FBBCC /* TweetListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD566621E3FB9C6007FBBCC /* TweetListViewController.m */; };
 		0CD566651E3FB9C6007FBBCC /* TweetListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CD566631E3FB9C6007FBBCC /* TweetListViewController.xib */; };
 		0CD5666D1E3FC872007FBBCC /* TweetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD5666B1E3FC872007FBBCC /* TweetTableViewCell.m */; };
-		0CD5666E1E3FC872007FBBCC /* TweetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CD5666C1E3FC872007FBBCC /* TweetTableViewCell.xib */; };
+		0CD5666E1E3FC872007FBBCC /* TweetListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CD5666C1E3FC872007FBBCC /* TweetListViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		0CD566631E3FB9C6007FBBCC /* TweetListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetListViewController.xib; sourceTree = "<group>"; };
 		0CD5666A1E3FC872007FBBCC /* TweetTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetTableViewCell.h; sourceTree = "<group>"; };
 		0CD5666B1E3FC872007FBBCC /* TweetTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetTableViewCell.m; sourceTree = "<group>"; };
-		0CD5666C1E3FC872007FBBCC /* TweetTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetTableViewCell.xib; sourceTree = "<group>"; };
+		0CD5666C1E3FC872007FBBCC /* TweetListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TweetListViewController.xib; path = ../views/TweetListViewController.xib; sourceTree = "<group>"; };
 		50E7CB13E7AFA38F0935F42C /* libPods-Twittr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Twittr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64EFA33A005AFA10CFD61DF0 /* Pods-Twittr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twittr.release.xcconfig"; path = "Pods/Target Support Files/Pods-Twittr/Pods-Twittr.release.xcconfig"; sourceTree = "<group>"; };
 		745F407948FEB207A0A48AF1 /* Pods-Twittr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twittr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Twittr/Pods-Twittr.debug.xcconfig"; sourceTree = "<group>"; };
@@ -49,6 +49,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C82B83D1E4115F20041137D /* components */ = {
+			isa = PBXGroup;
+			children = (
+				0CD5666A1E3FC872007FBBCC /* TweetTableViewCell.h */,
+				0CD5666B1E3FC872007FBBCC /* TweetTableViewCell.m */,
+				0CD5666C1E3FC872007FBBCC /* TweetListViewController.xib */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
+		0C82B83F1E4117A00041137D /* modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = modules;
+			sourceTree = "<group>";
+		};
 		0CD5663E1E3FB922007FBBCC = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +87,8 @@
 		0CD566491E3FB923007FBBCC /* Twittr */ = {
 			isa = PBXGroup;
 			children = (
+				0C82B83F1E4117A00041137D /* modules */,
+				0C82B83D1E4115F20041137D /* components */,
 				0CD566741E4112D8007FBBCC /* resources */,
 				0CD566731E411257007FBBCC /* config */,
 				0CD566681E3FBA70007FBBCC /* views */,
@@ -96,8 +115,6 @@
 			children = (
 				0CD566611E3FB9C6007FBBCC /* TweetListViewController.h */,
 				0CD566621E3FB9C6007FBBCC /* TweetListViewController.m */,
-				0CD5666A1E3FC872007FBBCC /* TweetTableViewCell.h */,
-				0CD5666B1E3FC872007FBBCC /* TweetTableViewCell.m */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -113,7 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				0CD566631E3FB9C6007FBBCC /* TweetListViewController.xib */,
-				0CD5666C1E3FC872007FBBCC /* TweetTableViewCell.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -223,7 +239,7 @@
 				0CD5665A1E3FB923007FBBCC /* LaunchScreen.storyboard in Resources */,
 				0CD566571E3FB923007FBBCC /* Assets.xcassets in Resources */,
 				0CD566651E3FB9C6007FBBCC /* TweetListViewController.xib in Resources */,
-				0CD5666E1E3FC872007FBBCC /* TweetTableViewCell.xib in Resources */,
+				0CD5666E1E3FC872007FBBCC /* TweetListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +452,7 @@
 				0CD566601E3FB923007FBBCC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
