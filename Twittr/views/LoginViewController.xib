@@ -19,9 +19,25 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twitter_Social_Icon_Rounded_Square_Color.png" translatesAutoresizingMaskIntoConstraints="NO" id="apy-Ia-FUz">
+                    <rect key="frame" x="112" y="258" width="150" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="0wI-89-GLZ"/>
+                        <constraint firstAttribute="width" constant="150" id="3YU-Ql-P3r"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twittr" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rhk-64-UGz">
+                    <rect key="frame" x="112" y="124.5" width="150" height="33.5"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                    <color key="textColor" red="0.1148131862" green="0.63301128149999997" blue="0.94878464939999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N54-Hm-WW1">
-                    <rect key="frame" x="125" y="318.5" width="125" height="30"/>
-                    <state key="normal" title="Login With Twitter"/>
+                    <rect key="frame" x="112.5" y="508" width="150" height="30"/>
+                    <color key="backgroundColor" red="0.1148131862282753" green="0.63301128149032593" blue="0.94878464937210083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Login">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
                     <connections>
                         <action selector="onLogin:" destination="-1" eventType="touchUpInside" id="M0P-4o-QD7"/>
                     </connections>
@@ -29,9 +45,18 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="N54-Hm-WW1" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="N2X-dF-YG6"/>
-                <constraint firstItem="N54-Hm-WW1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kAI-j8-da6"/>
+                <constraint firstItem="Rhk-64-UGz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4GA-ai-cpa"/>
+                <constraint firstItem="N54-Hm-WW1" firstAttribute="top" secondItem="apy-Ia-FUz" secondAttribute="bottom" constant="100" id="FWf-HJ-Uqd"/>
+                <constraint firstItem="apy-Ia-FUz" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Ozw-ie-F8F"/>
+                <constraint firstItem="apy-Ia-FUz" firstAttribute="top" secondItem="Rhk-64-UGz" secondAttribute="bottom" constant="100" id="Pv4-RW-9Wk"/>
+                <constraint firstItem="N54-Hm-WW1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="VP0-6h-kNt"/>
+                <constraint firstItem="apy-Ia-FUz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="eF9-l5-xss"/>
+                <constraint firstItem="N54-Hm-WW1" firstAttribute="width" secondItem="apy-Ia-FUz" secondAttribute="width" id="qJn-bd-dFI"/>
+                <constraint firstItem="Rhk-64-UGz" firstAttribute="width" secondItem="apy-Ia-FUz" secondAttribute="width" id="wol-gu-8Lm"/>
             </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="Twitter_Social_Icon_Rounded_Square_Color.png" width="400" height="400"/>
+    </resources>
 </document>

@@ -24,6 +24,8 @@
     [super viewDidLoad];
     self.tweetListTableView.dataSource = self;
     self.tweetListTableView.estimatedRowHeight = 200;
+//    self.tweetListTableView.rowHeight = UITableViewAutomaticDimension;
+    
     UINib *nib = [UINib nibWithNibName:@"TweetTableViewCell" bundle:nil];
     [self.tweetListTableView registerNib:nib forCellReuseIdentifier:@"TweetTableViewCell"];
     

@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *handleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timestampLabel;
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *retweetContainerHeightConstraint;
 
 @end
 
@@ -66,6 +67,10 @@
                                          nil;
                                      }];
     }
+    
+    self.retweetContainerHeightConstraint.constant = 0;
+    [self.contentView setNeedsUpdateConstraints];
+    
 }
 
 @end

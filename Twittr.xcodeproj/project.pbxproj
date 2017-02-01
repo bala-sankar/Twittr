@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0C042B5A1E4276C2002AD448 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 0C042B591E4276C2002AD448 /* README.md */; };
+		0C042B5D1E428816002AD448 /* Twitter_Social_Icon_Circle_Color.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C042B5B1E428816002AD448 /* Twitter_Social_Icon_Circle_Color.png */; };
+		0C042B5E1E428816002AD448 /* Twitter_Social_Icon_Rounded_Square_Color.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C042B5C1E428816002AD448 /* Twitter_Social_Icon_Rounded_Square_Color.png */; };
+		0C042B621E428F97002AD448 /* ic_repeat.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C042B5F1E428F97002AD448 /* ic_repeat.png */; };
+		0C042B631E428F97002AD448 /* ic_favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C042B601E428F97002AD448 /* ic_favorite.png */; };
+		0C042B641E428F97002AD448 /* ic_reply.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C042B611E428F97002AD448 /* ic_reply.png */; };
 		0C31AF5C1E41B5D60087605C /* TweetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C31AF5B1E41B5D60087605C /* TweetTableViewCell.xib */; };
 		0C3EED0C9EE35031DCE1EEAA /* libPods-Twittr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E7CB13E7AFA38F0935F42C /* libPods-Twittr.a */; };
 		0C82B8431E41183E0041137D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C82B8411E41183E0041137D /* LoginViewController.m */; };
@@ -26,6 +31,11 @@
 
 /* Begin PBXFileReference section */
 		0C042B591E4276C2002AD448 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0C042B5B1E428816002AD448 /* Twitter_Social_Icon_Circle_Color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Twitter_Social_Icon_Circle_Color.png; sourceTree = "<group>"; };
+		0C042B5C1E428816002AD448 /* Twitter_Social_Icon_Rounded_Square_Color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Twitter_Social_Icon_Rounded_Square_Color.png; sourceTree = "<group>"; };
+		0C042B5F1E428F97002AD448 /* ic_repeat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_repeat.png; sourceTree = "<group>"; };
+		0C042B601E428F97002AD448 /* ic_favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_favorite.png; sourceTree = "<group>"; };
+		0C042B611E428F97002AD448 /* ic_reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_reply.png; sourceTree = "<group>"; };
 		0C31AF5B1E41B5D60087605C /* TweetTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetTableViewCell.xib; sourceTree = "<group>"; };
 		0C82B8401E41183E0041137D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		0C82B8411E41183E0041137D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
@@ -182,6 +192,11 @@
 		0CD566741E4112D8007FBBCC /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				0C042B5F1E428F97002AD448 /* ic_repeat.png */,
+				0C042B601E428F97002AD448 /* ic_favorite.png */,
+				0C042B611E428F97002AD448 /* ic_reply.png */,
+				0C042B5B1E428816002AD448 /* Twitter_Social_Icon_Circle_Color.png */,
+				0C042B5C1E428816002AD448 /* Twitter_Social_Icon_Rounded_Square_Color.png */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -237,7 +252,7 @@
 				TargetAttributes = {
 					0CD566461E3FB923007FBBCC = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 3T2FE29WEZ;
+						DevelopmentTeam = KLG8QVB928;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -271,7 +286,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C31AF5C1E41B5D60087605C /* TweetTableViewCell.xib in Resources */,
+				0C042B5D1E428816002AD448 /* Twitter_Social_Icon_Circle_Color.png in Resources */,
+				0C042B641E428F97002AD448 /* ic_reply.png in Resources */,
+				0C042B631E428F97002AD448 /* ic_favorite.png in Resources */,
 				0C82B8441E41183E0041137D /* LoginViewController.xib in Resources */,
+				0C042B5E1E428816002AD448 /* Twitter_Social_Icon_Rounded_Square_Color.png in Resources */,
+				0C042B621E428F97002AD448 /* ic_repeat.png in Resources */,
 				0CD5665A1E3FB923007FBBCC /* LaunchScreen.storyboard in Resources */,
 				0CD566571E3FB923007FBBCC /* Assets.xcassets in Resources */,
 				0CD566651E3FB9C6007FBBCC /* TweetListViewController.xib in Resources */,
@@ -456,7 +476,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Twittr/Twittr.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3T2FE29WEZ;
+				DEVELOPMENT_TEAM = KLG8QVB928;
 				INFOPLIST_FILE = "$(SRCROOT)/Twittr/config/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.balasankar.Twittr;
@@ -471,7 +491,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Twittr/Twittr.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3T2FE29WEZ;
+				DEVELOPMENT_TEAM = KLG8QVB928;
 				INFOPLIST_FILE = "$(SRCROOT)/Twittr/config/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.balasankar.Twittr;
