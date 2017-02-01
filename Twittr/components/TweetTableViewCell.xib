@@ -37,7 +37,6 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.18679540060726307" green="1" blue="0.39473993314956268" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="brK-yZ-4tF" firstAttribute="top" secondItem="4nD-f3-Q1L" secondAttribute="top" constant="16" id="7Kr-Nt-Jrc"/>
                             <constraint firstAttribute="width" constant="60" id="VfR-aU-J82"/>
@@ -53,36 +52,35 @@
                                     <constraint firstAttribute="height" constant="25" id="ESg-Ba-sRp"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" id="oOU-zI-762"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="100" verticalHuggingPriority="251" horizontalCompressionResistancePriority="100" text="Handle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5es-uG-Lqw">
-                                <rect key="frame" x="75" y="15" width="54.5" height="25"/>
+                                <rect key="frame" x="75" y="15" width="44.5" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" id="IOF-Kt-Jqq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="251" horizontalCompressionResistancePriority="800" text="Timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MY4-Vu-wB5">
-                                <rect key="frame" x="294.5" y="15" width="85.5" height="25"/>
+                                <rect key="frame" x="305" y="15" width="75" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" id="64v-u1-DTs"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweet Content longgg labell is on its way... Hello World!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TE0-xm-30y">
                                 <rect key="frame" x="15" y="55" width="380" height="105"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.99653372142521579" blue="0.11044637713289041" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="TE0-xm-30y" secondAttribute="trailing" id="Fih-S2-SnL"/>
                             <constraint firstAttribute="bottom" secondItem="TE0-xm-30y" secondAttribute="bottom" id="GEV-Xa-gcN"/>

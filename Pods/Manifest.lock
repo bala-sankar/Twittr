@@ -1,4 +1,10 @@
 PODS:
+  - AFNetworking (3.0.4):
+    - AFNetworking/NSURLSession (= 3.0.4)
+    - AFNetworking/Reachability (= 3.0.4)
+    - AFNetworking/Security (= 3.0.4)
+    - AFNetworking/Serialization (= 3.0.4)
+    - AFNetworking/UIKit (= 3.0.4)
   - AFNetworking/NSURLSession (3.0.4):
     - AFNetworking/Reachability
     - AFNetworking/Security
@@ -6,11 +12,14 @@ PODS:
   - AFNetworking/Reachability (3.0.4)
   - AFNetworking/Security (3.0.4)
   - AFNetworking/Serialization (3.0.4)
+  - AFNetworking/UIKit (3.0.4):
+    - AFNetworking/NSURLSession
   - BDBOAuth1Manager (2.0.0):
     - AFNetworking/NSURLSession (~> 3.0.0)
   - DateTools (1.7.0)
 
 DEPENDENCIES:
+  - AFNetworking
   - BDBOAuth1Manager (~> 2.0)
   - DateTools (~> 1.7)
 
@@ -19,6 +28,6 @@ SPEC CHECKSUMS:
   BDBOAuth1Manager: 92d17d06f8a648602962304cd2f35ae7394fa001
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
 
-PODFILE CHECKSUM: 412ab4e935eb5d484baa7539e0c692de51a6ce9a
+PODFILE CHECKSUM: 52992da0cf313fc824b41a49a7d2e77d85a193c7
 
 COCOAPODS: 1.1.1

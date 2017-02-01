@@ -8,5 +8,6 @@ target 'Twittr' do
   # Pods for Twittr
   pod 'BDBOAuth1Manager', '~> 2.0'
   pod 'DateTools', '~> 1.7'
+  pod 'AFNetworking'
 
 end

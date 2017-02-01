@@ -8,6 +8,8 @@
 
 #import "TweetTableViewCell.h"
 #import <DateTools/NSDate+DateTools.h>
+#import <AFNetworking/UIImage+AFNetworking.h>
+
 @interface TweetTableViewCell ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
@@ -35,9 +37,10 @@
 
 - (void) refreshData {
     self.nameLabel.text = self.tweet.author.name;
-    self.handleLabel.text = self.tweet.author.screenName;
+    self.handleLabel.text = [NSString stringWithFormat:@"@%@", self.tweet.author.screenName];
     self.timestampLabel.text=self.tweet.createdAt.shortTimeAgoSinceNow;
     self.contentLabel.text = self.tweet.text;
+//    self.profileImageView = self.tweet.author.imageUrl;
 }
 
 @end

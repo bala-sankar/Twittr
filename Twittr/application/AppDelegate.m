@@ -30,7 +30,6 @@
                                                     initWithNibName:@"TweetListViewController" bundle:nil];
     if (currentUser != nil) {
         NSLog(@"Current user found. Load Tweet View Controller");
-        
         self.navigationController = [[UINavigationController alloc] initWithRootViewController:tweetViewController];
     } else {
         NSLog(@"Current user not found. Load Login View Controller");
