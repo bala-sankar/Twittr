@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "TweetListViewController.h"
 #import "LoginViewController.h"
+#import "TwitterClient.h"
+#import "UserModel.h"
 
 @interface AppDelegate ()
 
@@ -54,5 +56,11 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
+{
+    [[TwitterClient getInstance] openUrl:url];
+    
+    return YES;
+}
 
 @end

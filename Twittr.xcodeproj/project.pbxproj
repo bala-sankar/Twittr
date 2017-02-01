@@ -18,6 +18,9 @@
 		0CD566651E3FB9C6007FBBCC /* TweetListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CD566631E3FB9C6007FBBCC /* TweetListViewController.xib */; };
 		0CD5666D1E3FC872007FBBCC /* TweetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD5666B1E3FC872007FBBCC /* TweetTableViewCell.m */; };
 		0CD5666E1E3FC872007FBBCC /* TweetListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CD5666C1E3FC872007FBBCC /* TweetListViewController.xib */; };
+		0CFEF7E01E411F5000544DDD /* TwitterClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFEF7DF1E411F5000544DDD /* TwitterClient.m */; };
+		0CFEF7E31E413B8000544DDD /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFEF7E21E413B8000544DDD /* UserModel.m */; };
+		0CFEF7E61E413B9A00544DDD /* TweetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFEF7E51E413B9A00544DDD /* TweetModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,13 @@
 		0CD5666A1E3FC872007FBBCC /* TweetTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetTableViewCell.h; sourceTree = "<group>"; };
 		0CD5666B1E3FC872007FBBCC /* TweetTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetTableViewCell.m; sourceTree = "<group>"; };
 		0CD5666C1E3FC872007FBBCC /* TweetListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TweetListViewController.xib; path = ../views/TweetListViewController.xib; sourceTree = "<group>"; };
+		0CFEF7DE1E411F5000544DDD /* TwitterClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterClient.h; sourceTree = "<group>"; };
+		0CFEF7DF1E411F5000544DDD /* TwitterClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterClient.m; sourceTree = "<group>"; };
+		0CFEF7E11E413B8000544DDD /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		0CFEF7E21E413B8000544DDD /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		0CFEF7E41E413B9A00544DDD /* TweetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetModel.h; sourceTree = "<group>"; };
+		0CFEF7E51E413B9A00544DDD /* TweetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetModel.m; sourceTree = "<group>"; };
+		0CFEF7E71E41617900544DDD /* Twittr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Twittr.entitlements; sourceTree = "<group>"; };
 		50E7CB13E7AFA38F0935F42C /* libPods-Twittr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Twittr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64EFA33A005AFA10CFD61DF0 /* Pods-Twittr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twittr.release.xcconfig"; path = "Pods/Target Support Files/Pods-Twittr/Pods-Twittr.release.xcconfig"; sourceTree = "<group>"; };
 		745F407948FEB207A0A48AF1 /* Pods-Twittr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twittr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Twittr/Pods-Twittr.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,6 +77,8 @@
 		0C82B83F1E4117A00041137D /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				0CFEF7DE1E411F5000544DDD /* TwitterClient.h */,
+				0CFEF7DF1E411F5000544DDD /* TwitterClient.m */,
 			);
 			path = modules;
 			sourceTree = "<group>";
@@ -92,6 +104,7 @@
 		0CD566491E3FB923007FBBCC /* Twittr */ = {
 			isa = PBXGroup;
 			children = (
+				0CFEF7E71E41617900544DDD /* Twittr.entitlements */,
 				0C82B83F1E4117A00041137D /* modules */,
 				0C82B83D1E4115F20041137D /* components */,
 				0CD566741E4112D8007FBBCC /* resources */,
@@ -129,6 +142,10 @@
 		0CD566671E3FBA0C007FBBCC /* models */ = {
 			isa = PBXGroup;
 			children = (
+				0CFEF7E11E413B8000544DDD /* UserModel.h */,
+				0CFEF7E21E413B8000544DDD /* UserModel.m */,
+				0CFEF7E41E413B9A00544DDD /* TweetModel.h */,
+				0CFEF7E51E413B9A00544DDD /* TweetModel.m */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -217,7 +234,13 @@
 				TargetAttributes = {
 					0CD566461E3FB923007FBBCC = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 3T2FE29WEZ;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -308,9 +331,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CD566641E3FB9C6007FBBCC /* TweetListViewController.m in Sources */,
+				0CFEF7E61E413B9A00544DDD /* TweetModel.m in Sources */,
+				0CFEF7E31E413B8000544DDD /* UserModel.m in Sources */,
 				0CD5664F1E3FB923007FBBCC /* AppDelegate.m in Sources */,
 				0CD5664C1E3FB923007FBBCC /* main.m in Sources */,
 				0CD5666D1E3FC872007FBBCC /* TweetTableViewCell.m in Sources */,
+				0CFEF7E01E411F5000544DDD /* TwitterClient.m in Sources */,
 				0C82B8431E41183E0041137D /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,7 +450,9 @@
 			baseConfigurationReference = 745F407948FEB207A0A48AF1 /* Pods-Twittr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Twittr/Info.plist;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 3T2FE29WEZ;
+				INFOPLIST_FILE = "$(SRCROOT)/Twittr/config/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.balasankar.Twittr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -436,7 +464,9 @@
 			baseConfigurationReference = 64EFA33A005AFA10CFD61DF0 /* Pods-Twittr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Twittr/Info.plist;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 3T2FE29WEZ;
+				INFOPLIST_FILE = "$(SRCROOT)/Twittr/config/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.balasankar.Twittr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
