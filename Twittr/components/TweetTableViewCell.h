@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TweetModel.h"
 
 @interface TweetTableViewCell : UITableViewCell
+
+@property (nonatomic, strong) TweetModel *tweet;
+
+- (void) refreshData;
 
 @end

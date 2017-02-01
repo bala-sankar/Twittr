@@ -7,7 +7,7 @@
 //
 
 #import "TweetTableViewCell.h"
-
+#import <DateTools/NSDate+DateTools.h>
 @interface TweetTableViewCell ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
@@ -23,10 +23,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    self.nameLabel.text = @"Twitter Name";
-    self.handleLabel.text = @"@_balasankar_";
-    self.timestampLabel.text=@"2h";
-    self.contentLabel.text = @"Here goes my tweet. Tweet tweet tweet....";
+    [self refreshData];
     
 }
 
@@ -34,6 +31,13 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void) refreshData {
+    self.nameLabel.text = self.tweet.author.name;
+    self.handleLabel.text = self.tweet.author.screenName;
+    self.timestampLabel.text=self.tweet.createdAt.shortTimeAgoSinceNow;
+    self.contentLabel.text = self.tweet.text;
 }
 
 @end

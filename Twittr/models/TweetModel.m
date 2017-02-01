@@ -19,10 +19,18 @@
         self.author = [[UserModel alloc] initWithDictionary: dictionary[@"user"]];
         NSString *createdAtString = dictionary[@"created_at"];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        dateFormatter.dateFormat = @"EEE MMM d HH:mm::ss Z y";
+        dateFormatter.dateFormat = @"EEE MMM d HH:mm:ss Z y";
         self.createdAt = [dateFormatter dateFromString:createdAtString];
     }
     return self;
+}
+
++ (NSArray *)convertTweets: (NSArray *)array {
+    NSMutableArray *tweets = [NSMutableArray array];
+    for (NSDictionary *dictionary in array) {
+        [tweets addObject:[[self alloc] initWithDictionary:dictionary]];
+    }
+    return tweets;
 }
 
 @end

@@ -8,10 +8,13 @@
 
 #import "TweetListViewController.h"
 #import "TweetTableViewCell.h"
+#import "TwitterClient.h"
+#import "TweetModel.h"
 
 @interface TweetListViewController () <UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tweetListTableView;
+@property (strong, nonatomic) NSArray *tweetModels;
 
 @end
 
@@ -23,6 +26,8 @@
     self.tweetListTableView.rowHeight = 200;
     UINib *nib = [UINib nibWithNibName:@"TweetTableViewCell" bundle:nil];
     [self.tweetListTableView registerNib:nib forCellReuseIdentifier:@"TweetTableViewCell"];
+    
+    [self fetchTweets];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,14 +35,30 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 20;
+- (void) fetchTweets {
+    [[TwitterClient sharedInstance] GET:@"1.1/statuses/home_timeline.json"
+                             parameters:nil
+                               progress:^(NSProgress * _Nonnull downloadProgress) {
+                                   NSLog(@"Request to fetch tweets in progress");
+                               }
+                                success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                                    NSLog(@"Retrieved tweets successfully");
+                                    self.tweetModels = [TweetModel convertTweets:responseObject];
+                                    [self.tweetListTableView reloadData];
+                                }
+                                failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                                    NSLog(@"Failed to retireve tweets");
+                                }];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.tweetModels.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TweetTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TweetTableViewCell" forIndexPath:indexPath];
+    cell.tweet = [self.tweetModels objectAtIndex:indexPath.row];
+    [cell refreshData];
     return cell;
 }
 

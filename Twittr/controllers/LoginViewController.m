@@ -26,9 +26,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)onLogin:(id)sender
-{
-    [[TwitterClient getInstance] loginWithCompletion:^(UserModel *user, NSError *error) {
+- (IBAction)onLogin:(id)sender {
+    [[TwitterClient sharedInstance] loginWithCompletion:^(UserModel *user, NSError *error) {
         if (user != nil) {
             // Success
             NSLog(@"Welcome use:%@", user.name);

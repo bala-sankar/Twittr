@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "TweetListViewController.h"
 #import "LoginViewController.h"
-#import "NavigationViewController.h"
 
 #import "TwitterClient.h"
 #import "UserModel.h"
@@ -25,8 +24,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
+    UserModel *currentUser = UserModel.currentUser;
     LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-    self.navigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
+    TweetListViewController *tweetViewController = [[TweetListViewController alloc]
+                                                    initWithNibName:@"TweetListViewController" bundle:nil];
+    if (currentUser != nil) {
+        NSLog(@"Current user found. Load Tweet View Controller");
+        
+        self.navigationController = [[UINavigationController alloc] initWithRootViewController:tweetViewController];
+    } else {
+        NSLog(@"Current user not found. Load Login View Controller");
+        self.navigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
+    }
+    
     [self.navigationController setNavigationBarHidden:YES];
     CGRect frame = [UIScreen mainScreen].bounds;
     self.window = [[UIWindow alloc] initWithFrame:frame];
@@ -62,9 +72,8 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
-{
-    [[TwitterClient getInstance] openUrl:url];
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    [[TwitterClient sharedInstance] openUrl:url];
     return YES;
 }
 

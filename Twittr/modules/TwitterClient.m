@@ -20,7 +20,7 @@ NSString * const kTwitterBaseUrl = @"https://api.twitter.com/";
 
 @implementation TwitterClient
 
-+ (TwitterClient *)getInstance {
++ (TwitterClient *)sharedInstance {
     static TwitterClient *instance = nil;
 
     static dispatch_once_t onceToken;

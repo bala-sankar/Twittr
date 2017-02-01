@@ -17,4 +17,6 @@
 
 -(instancetype) initWithDictionary:(NSDictionary *)dictionary;
 
++ (NSArray *)convertTweets: (NSArray *)array;
+
 @end
