@@ -8,7 +8,7 @@
 
 #import "TweetTableViewCell.h"
 #import <DateTools/NSDate+DateTools.h>
-#import <AFNetworking/UIImage+AFNetworking.h>
+#import <UIImageView+AFNetworking.h>
 
 @interface TweetTableViewCell ()
 
@@ -40,7 +40,32 @@
     self.handleLabel.text = [NSString stringWithFormat:@"@%@", self.tweet.author.screenName];
     self.timestampLabel.text=self.tweet.createdAt.shortTimeAgoSinceNow;
     self.contentLabel.text = self.tweet.text;
-//    self.profileImageView = self.tweet.author.imageUrl;
+    if (self.tweet.author.imageUrl != nil) {
+        NSURLRequest *imageRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:self.tweet.author.imageUrl]];
+    
+        [self.profileImageView setImageWithURLRequest:imageRequest
+                                 placeholderImage:nil
+                                          success:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, UIImage * _Nonnull image) {
+                                         // imageResponse will be nil if the image is cached
+                                         if (response != nil) {
+                                             NSLog(@"Image was NOT cached, fade in image");
+                                             self.profileImageView.alpha = 0.0;
+                                             self.profileImageView.image = image;
+                                             [UIView animateWithDuration:0.3 animations:^{
+                                                 self.profileImageView.alpha = 1.0;
+                                             }];
+                                         }
+                                         else
+                                         {
+                                             NSLog(@"Image was cached so just update the image");
+                                             self.profileImageView.image = image;
+                                         }
+                                         
+                                     }
+                                          failure:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, NSError * _Nonnull error) {
+                                         nil;
+                                     }];
+    }
 }
 
 @end
