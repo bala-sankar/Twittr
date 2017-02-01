@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C042B5A1E4276C2002AD448 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 0C042B591E4276C2002AD448 /* README.md */; };
 		0C31AF5C1E41B5D60087605C /* TweetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C31AF5B1E41B5D60087605C /* TweetTableViewCell.xib */; };
 		0C3EED0C9EE35031DCE1EEAA /* libPods-Twittr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E7CB13E7AFA38F0935F42C /* libPods-Twittr.a */; };
 		0C82B8431E41183E0041137D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C82B8411E41183E0041137D /* LoginViewController.m */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C042B591E4276C2002AD448 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0C31AF5B1E41B5D60087605C /* TweetTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetTableViewCell.xib; sourceTree = "<group>"; };
 		0C82B8401E41183E0041137D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		0C82B8411E41183E0041137D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 		0CD5663E1E3FB922007FBBCC = {
 			isa = PBXGroup;
 			children = (
+				0C042B591E4276C2002AD448 /* README.md */,
 				0CD566491E3FB923007FBBCC /* Twittr */,
 				0CD566481E3FB923007FBBCC /* Products */,
 				2CB8A1B3CABA04AA7D03077E /* Pods */,
@@ -336,6 +339,7 @@
 				0CD5664F1E3FB923007FBBCC /* AppDelegate.m in Sources */,
 				0CD5664C1E3FB923007FBBCC /* main.m in Sources */,
 				0CD5666D1E3FC872007FBBCC /* TweetTableViewCell.m in Sources */,
+				0C042B5A1E4276C2002AD448 /* README.md in Sources */,
 				0CFEF7E01E411F5000544DDD /* TwitterClient.m in Sources */,
 				0C82B8431E41183E0041137D /* LoginViewController.m in Sources */,
 			);
