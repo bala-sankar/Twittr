@@ -9,10 +9,14 @@
 #import "AppDelegate.h"
 #import "TweetListViewController.h"
 #import "LoginViewController.h"
+#import "NavigationViewController.h"
+
 #import "TwitterClient.h"
 #import "UserModel.h"
 
 @interface AppDelegate ()
+
+@property (nonatomic, strong) UINavigationController *navigationController;
 
 @end
 
@@ -20,11 +24,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    TweetListViewController *viewController = [[TweetListViewController alloc] initWithNibName:@"TweetListViewController" bundle:nil];
-    LoginViewController *loginController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+
+    LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
+    [self.navigationController setNavigationBarHidden:YES];
     CGRect frame = [UIScreen mainScreen].bounds;
     self.window = [[UIWindow alloc] initWithFrame:frame];
-    self.window.rootViewController = loginController;
+    self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -59,7 +65,6 @@
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
 {
     [[TwitterClient getInstance] openUrl:url];
-    
     return YES;
 }
 

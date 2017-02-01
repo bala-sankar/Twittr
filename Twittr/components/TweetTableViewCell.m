@@ -9,6 +9,7 @@
 #import "TweetTableViewCell.h"
 
 @interface TweetTableViewCell ()
+
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *handleLabel;

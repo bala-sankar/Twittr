@@ -10,6 +10,7 @@
 #import "TweetTableViewCell.h"
 
 @interface TweetListViewController () <UITableViewDataSource>
+
 @property (weak, nonatomic) IBOutlet UITableView *tweetListTableView;
 
 @end
@@ -20,7 +21,6 @@
     [super viewDidLoad];
     self.tweetListTableView.dataSource = self;
     self.tweetListTableView.rowHeight = 200;
-    
     UINib *nib = [UINib nibWithNibName:@"TweetTableViewCell" bundle:nil];
     [self.tweetListTableView registerNib:nib forCellReuseIdentifier:@"TweetTableViewCell"];
 }

@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "TweetListViewController.h"
 #import "TwitterClient.h"
 
 @interface LoginViewController ()
@@ -31,6 +32,9 @@
         if (user != nil) {
             // Success
             NSLog(@"Welcome use:%@", user.name);
+            TweetListViewController *tweetViewController = [[TweetListViewController alloc]
+                                                            initWithNibName:@"TweetListViewController" bundle:nil];
+            [self.navigationController pushViewController:tweetViewController animated:YES];
         } else {
             // Error
         }
