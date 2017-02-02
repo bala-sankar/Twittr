@@ -37,7 +37,7 @@
 - (UIViewController *)rootViewController {
     UIViewController *viewController;
     if (self.isLoggedIn) {
-        viewController = [self tweetViewController];
+        viewController = [self mainTabViewController];
     } else {
         viewController = [self loginViewController];
     }
@@ -56,28 +56,22 @@
                                                     initWithNibName:@"TweetListViewController" bundle:nil];
     return tweetViewController;
 }
-//
-//- (UIViewController *)loggedInVC
-//{
-//    // Create root VC for the tab's navigation controller
-//    LoggedInViewController *vc = [[LoggedInViewController alloc] initWithNibName:@"LoggedInViewController" bundle:nil];
-//    vc.title = @"Logged In";
-//    
-//    // create tab item
-//    UITabBarItem *item = [[UITabBarItem alloc] initWithTitle:@"Logged In" image:nil tag:0];
-//    vc.tabBarItem = item;
-//    
-//    
-//    // create navigation controller
-//    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
-//    
-//    // create tab bar view controller
-//    UITabBarController *tabController = [[UITabBarController alloc] init];
-//    // Add navigation controller to tab bar controller
-//    tabController.viewControllers = @[navController];
-//    
-//    return tabController;
-//}
 
+- (UIViewController *)mainTabViewController {
+    UIViewController *tweetNavigationController = [self tweetListNavigationController];
+    
+    // create tab item
+    UITabBarItem *tweetListItem = [[UITabBarItem alloc] initWithTitle:@"Home" image:nil tag:0];
+    tweetNavigationController.tabBarItem = tweetListItem;
+
+    UITabBarController *mainTabBarController = [[UITabBarController alloc] init];
+    mainTabBarController.viewControllers = @[tweetNavigationController];
+    return mainTabBarController;
+}
+
+- (UIViewController *)tweetListNavigationController {
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[self tweetViewController]];
+    return navigationController;
+}
 
 @end
