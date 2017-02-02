@@ -21,7 +21,17 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Rq-vd-3Kn" userLabel="Top Container">
                         <rect key="frame" x="0.0" y="0.0" width="455" height="30"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Retweeted" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vc-Aq-IFd">
+                                <rect key="frame" x="75" y="1" width="60.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <constraints>
+                            <constraint firstItem="7vc-Aq-IFd" firstAttribute="height" secondItem="4Rq-vd-3Kn" secondAttribute="height" id="F6C-8G-p7D"/>
+                            <constraint firstItem="7vc-Aq-IFd" firstAttribute="centerY" secondItem="4Rq-vd-3Kn" secondAttribute="centerY" id="O2X-Nr-oHv"/>
                             <constraint firstAttribute="height" constant="30" id="ler-kx-3ud"/>
                         </constraints>
                     </view>
@@ -131,6 +141,7 @@
                     <constraint firstAttribute="trailingMargin" secondItem="v2I-Bd-Eqr" secondAttribute="trailing" constant="-8" id="jk4-yJ-WcN"/>
                     <constraint firstItem="07T-QT-gDo" firstAttribute="leading" secondItem="4nD-f3-Q1L" secondAttribute="trailing" id="mei-BB-P1E"/>
                     <constraint firstItem="07T-QT-gDo" firstAttribute="top" secondItem="v2I-Bd-Eqr" secondAttribute="bottom" id="pT2-nD-Z8s"/>
+                    <constraint firstItem="7vc-Aq-IFd" firstAttribute="leading" secondItem="Wxd-NY-MfQ" secondAttribute="leading" id="rhm-uK-aKr"/>
                     <constraint firstItem="v2I-Bd-Eqr" firstAttribute="top" secondItem="4Rq-vd-3Kn" secondAttribute="bottom" id="uXZ-4E-Yew"/>
                 </constraints>
             </tableViewCellContentView>
