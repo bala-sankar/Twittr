@@ -7,15 +7,10 @@
 //
 
 #import "AppDelegate.h"
-#import "TweetListViewController.h"
-#import "LoginViewController.h"
-
 #import "TwitterClient.h"
-#import "UserModel.h"
+#import "NavigationManager.h"
 
 @interface AppDelegate ()
-
-@property (nonatomic, strong) UINavigationController *navigationController;
 
 @end
 
@@ -23,23 +18,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
-    UserModel *currentUser = UserModel.currentUser;
-    LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-    TweetListViewController *tweetViewController = [[TweetListViewController alloc]
-                                                    initWithNibName:@"TweetListViewController" bundle:nil];
-    if (currentUser != nil) {
-        NSLog(@"Current user found. Load Tweet View Controller");
-        self.navigationController = [[UINavigationController alloc] initWithRootViewController:tweetViewController];
-    } else {
-        NSLog(@"Current user not found. Load Login View Controller");
-        self.navigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
-    }
-    
-    [self.navigationController setNavigationBarHidden:YES];
     CGRect frame = [UIScreen mainScreen].bounds;
     self.window = [[UIWindow alloc] initWithFrame:frame];
-    self.window.rootViewController = self.navigationController;
+    self.window.rootViewController = [NavigationManager sharedInstance].rootViewController;
     [self.window makeKeyAndVisible];
     return YES;
 }

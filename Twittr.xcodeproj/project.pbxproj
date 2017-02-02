@@ -13,6 +13,7 @@
 		0C042B621E428F97002AD448 /* ic_repeat.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C042B5F1E428F97002AD448 /* ic_repeat.png */; };
 		0C042B631E428F97002AD448 /* ic_favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C042B601E428F97002AD448 /* ic_favorite.png */; };
 		0C042B641E428F97002AD448 /* ic_reply.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C042B611E428F97002AD448 /* ic_reply.png */; };
+		0C042B6C1E42A9BF002AD448 /* NavigationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C042B6B1E42A9BF002AD448 /* NavigationManager.m */; };
 		0C31AF5C1E41B5D60087605C /* TweetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C31AF5B1E41B5D60087605C /* TweetTableViewCell.xib */; };
 		0C3EED0C9EE35031DCE1EEAA /* libPods-Twittr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E7CB13E7AFA38F0935F42C /* libPods-Twittr.a */; };
 		0C82B8431E41183E0041137D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C82B8411E41183E0041137D /* LoginViewController.m */; };
@@ -36,6 +37,8 @@
 		0C042B5F1E428F97002AD448 /* ic_repeat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_repeat.png; sourceTree = "<group>"; };
 		0C042B601E428F97002AD448 /* ic_favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_favorite.png; sourceTree = "<group>"; };
 		0C042B611E428F97002AD448 /* ic_reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_reply.png; sourceTree = "<group>"; };
+		0C042B6A1E42A9BF002AD448 /* NavigationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationManager.h; sourceTree = "<group>"; };
+		0C042B6B1E42A9BF002AD448 /* NavigationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationManager.m; sourceTree = "<group>"; };
 		0C31AF5B1E41B5D60087605C /* TweetTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetTableViewCell.xib; sourceTree = "<group>"; };
 		0C82B8401E41183E0041137D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		0C82B8411E41183E0041137D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
@@ -91,6 +94,8 @@
 			children = (
 				0CFEF7DE1E411F5000544DDD /* TwitterClient.h */,
 				0CFEF7DF1E411F5000544DDD /* TwitterClient.m */,
+				0C042B6A1E42A9BF002AD448 /* NavigationManager.h */,
+				0C042B6B1E42A9BF002AD448 /* NavigationManager.m */,
 			);
 			path = modules;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 				0CD566641E3FB9C6007FBBCC /* TweetListViewController.m in Sources */,
 				0CFEF7E61E413B9A00544DDD /* TweetModel.m in Sources */,
 				0CFEF7E31E413B8000544DDD /* UserModel.m in Sources */,
+				0C042B6C1E42A9BF002AD448 /* NavigationManager.m in Sources */,
 				0CD5664F1E3FB923007FBBCC /* AppDelegate.m in Sources */,
 				0CD5664C1E3FB923007FBBCC /* main.m in Sources */,
 				0CD5666D1E3FC872007FBBCC /* TweetTableViewCell.m in Sources */,

@@ -153,22 +153,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Twittr/application/AppDelegate.m"
-            timestampString = "507650761.257608"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "-application:didFinishLaunchingWithOptions:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Twittr/models/UserModel.m"
             timestampString = "507649934.047633"
             startingColumnNumber = "9223372036854775807"
@@ -272,6 +256,22 @@
             startingLineNumber = "71"
             endingLineNumber = "71"
             landmarkName = "-refreshData"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Twittr/modules/NavigationManager.m"
+            timestampString = "507687892.544542"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "-tweetViewController"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
