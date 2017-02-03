@@ -158,7 +158,7 @@
 - (ProfileViewController *)profileViewController {
     ProfileViewController *profileViewController = [[ProfileViewController alloc]
                                                     initWithNibName:@"ProfileViewController" bundle:nil];
-    profileViewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_create.png"] style:UIBarButtonItemStylePlain target:nil action:nil];
+    profileViewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_create.png"] style:UIBarButtonItemStylePlain target:self action:@selector(pushCreateTweetView)];
     return profileViewController;
 }
 
