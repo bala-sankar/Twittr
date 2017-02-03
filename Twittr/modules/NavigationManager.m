@@ -91,13 +91,11 @@
     self.mainNavigationController.viewControllers = @[[self mainTabViewController]];
 }
 
-- (void)pushView:(TweetViewType) tweetViewType {
+- (void)pushTweetDetailView:(TweetModel *) tweet {
     UINavigationController *navigationViewController = (UINavigationController *)(self.mainTabBarController.selectedViewController);
-    switch (tweetViewType) {
-        case TweetViewTypeDetail:
-            [navigationViewController pushViewController:[self tweetDetailViewController] animated:YES];
-            break;
-    }
+    TweetDetailViewController *tweetDetailViewController = [self tweetDetailViewController];
+    tweetDetailViewController.tweet = tweet;
+    [navigationViewController pushViewController:tweetDetailViewController animated:YES];
 }
 
 

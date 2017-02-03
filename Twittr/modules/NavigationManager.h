@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "TweetModel.h"
 
 typedef NS_ENUM(NSInteger, TweetViewType) {
     TweetViewTypeLogin,
@@ -27,6 +28,6 @@ typedef NS_ENUM(NSInteger, TweetViewType) {
 
 - (void)login;
 - (void)logout;
-- (void)pushView:(TweetViewType) tweetViewType;
+- (void)pushTweetDetailView:(TweetModel *) tweet;
 
 @end

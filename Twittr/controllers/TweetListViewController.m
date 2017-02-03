@@ -67,7 +67,8 @@
 }
 
 - (void)didTapTweet:(TweetTableViewCell *)tableViewCell Tweet:(TweetModel *)tweet {
-    NSLog(@"Tweet: %@", tweet.text);
+    [[NavigationManager sharedInstance] pushTweetDetailView:tweet];
+    
 }
 
 - (void)didTapImage:(TweetTableViewCell *)tableViewCell User:(UserModel *)user {

@@ -16,6 +16,8 @@
 @property (nonatomic, strong) UserModel *author;
 @property (nonatomic, assign) BOOL retweet;
 @property (nonatomic, strong) UserModel *user;
+@property (nonatomic, strong) NSString *favoriteCount;
+@property (nonatomic, strong) NSString *retweetCount;
 
 -(instancetype) initWithDictionary:(NSDictionary *)dictionary;
 

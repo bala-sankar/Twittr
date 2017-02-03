@@ -14,6 +14,9 @@
 @property (nonatomic,strong) NSString *screenName;
 @property (nonatomic,strong) NSString *imageUrl;
 @property (nonatomic,strong) NSString *tagLine;
+@property (nonatomic,strong) NSString *followersCount;
+@property (nonatomic,strong) NSString *friendsCount;
+
 @property (class, nonatomic, assign, readonly) UserModel *currentUser;
 
 - (instancetype) initWithDictionary:(NSDictionary *)dictionary;

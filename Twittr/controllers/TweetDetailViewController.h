@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TweetModel.h"
 
 @interface TweetDetailViewController : UIViewController
+
+@property (nonatomic, strong) TweetModel *tweet;
 
 @end
