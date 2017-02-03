@@ -7,8 +7,11 @@
 //
 
 #import "CreateViewController.h"
+#import "NavigationManager.h"
+#import "TwitterClient.h"
 
-@interface CreateViewController ()
+@interface CreateViewController () <UITextViewDelegate>
+@property (weak, nonatomic) IBOutlet UITextView *tweetContentTextView;
 
 @end
 
@@ -16,7 +19,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.tweetContentTextView.text = @"What's happening?";
+    self.tweetContentTextView.textColor = [UIColor lightGrayColor];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(popView)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Tweet" style:UIBarButtonItemStylePlain target:self action:@selector(sendTweet)];
+    self.tweetContentTextView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +31,33 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    if ([textView.text isEqualToString:@"What's happening?"]) {
+        textView.text = @"";
+        textView.textColor = [UIColor blackColor];
+    }
 }
-*/
 
+- (void)sendTweet {
+    NSString *URLString = @"1.1/statuses/update.json";
+    NSMutableDictionary *params = [NSMutableDictionary new];
+    [params setValue:self.tweetContentTextView.text forKey:@"status"];
+    [[TwitterClient sharedInstance] POST:URLString
+                              parameters: params
+                                progress:^(NSProgress * _Nonnull uploadProgress) {
+                                    NSLog(@"Sending tweets...");
+                                }
+                                 success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                                    NSLog(@"Successfully tweet sent");
+                                 }
+                                 failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                                     NSLog(@"Failed to send tweet.");
+                                 }];
+    [self popView];
+}
+
+- (void)popView {
+    [[NavigationManager sharedInstance] popCreateTweetView];
+}
 @end

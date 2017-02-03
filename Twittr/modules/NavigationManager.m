@@ -13,6 +13,7 @@
 #import "ProfileViewController.h"
 #import "TweetDetailViewController.h"
 #import "TwitterClient.h"
+#import "CreateViewController.h"
 
 @interface NavigationManager()
 
@@ -105,6 +106,15 @@
     [navigationViewController pushViewController:profileViewController animated:YES];
 }
 
+- (void)pushCreateTweetView {
+    UINavigationController *navigationViewController = (UINavigationController *)(self.mainTabBarController.selectedViewController);
+    [navigationViewController pushViewController:[self createTweetViewController] animated:YES];
+}
+
+- (void)popCreateTweetView {
+    UINavigationController *navigationViewController = (UINavigationController *)(self.mainTabBarController.selectedViewController);
+    [navigationViewController popViewControllerAnimated:YES];
+}
 
 // Navigation Controllers
 
@@ -135,7 +145,7 @@
     } else {
         tweetViewController.restorationIdentifier = @"home";
     }
-    tweetViewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_create.png"] style:UIBarButtonItemStylePlain target:nil action:nil];
+    tweetViewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_create.png"] style:UIBarButtonItemStylePlain target:self action:@selector(pushCreateTweetView)];
     tweetViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Log Out" style:UIBarButtonItemStylePlain target:self action:@selector(logout)];
     // TODO: Fix the size of the image
 //    UIImage *img = [UIImage imageNamed:@"Twitter_Social_Icon_Blue.png"];
@@ -156,6 +166,11 @@
     TweetDetailViewController *tweetDetailViewController = [[TweetDetailViewController alloc]
                                                     initWithNibName:@"TweetDetailViewController" bundle:nil];
     return tweetDetailViewController;
+}
+
+- (CreateViewController *)createTweetViewController {
+    CreateViewController *createTweetViewController = [[CreateViewController alloc] initWithNibName:@"CreateViewController" bundle:nil];
+    return createTweetViewController;
 }
 
 @end

@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateViewController">
             <connections>
+                <outlet property="tweetContentTextView" destination="zyQ-Ns-UxU" id="eLx-6L-5P3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,12 +21,11 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zyQ-Ns-UxU">
-                    <rect key="frame" x="0.0" y="25" width="375" height="267"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="zyQ-Ns-UxU">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="267"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes" enablesReturnKeyAutomatically="YES"/>
                 </textView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -33,7 +33,7 @@
                 <constraint firstItem="zyQ-Ns-UxU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1dl-fT-3qi"/>
                 <constraint firstItem="zyQ-Ns-UxU" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="Qd6-oS-yVq"/>
                 <constraint firstItem="zyQ-Ns-UxU" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.4" id="cR3-h8-5vc"/>
-                <constraint firstItem="zyQ-Ns-UxU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="25" id="ipS-ey-wgh"/>
+                <constraint firstItem="zyQ-Ns-UxU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ipS-ey-wgh"/>
             </constraints>
         </view>
     </objects>

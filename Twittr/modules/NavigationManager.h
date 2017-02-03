@@ -30,5 +30,7 @@ typedef NS_ENUM(NSInteger, TweetViewType) {
 - (void)logout;
 - (void)pushTweetDetailView:(TweetModel *) tweet;
 - (void)pushProfileView:(UserModel *) user;
+- (void)pushCreateTweetView;
+- (void)popCreateTweetView;
 
 @end
