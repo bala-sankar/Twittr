@@ -124,9 +124,15 @@
 }
 
 - (UINavigationController *)profileNavigationController {
-    ProfileViewController *profileController = [self profileViewController];
-    profileController.user = UserModel.currentUser;
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:profileController];
+    ProfileViewController *profileViewController = [self profileViewController];
+    profileViewController.user = UserModel.currentUser;
+    profileViewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_create.png"] style:UIBarButtonItemStylePlain target:self action:@selector(pushCreateTweetView)];
+    profileViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Log Out" style:UIBarButtonItemStylePlain target:self action:@selector(logout)];
+    UIImageView *imageView = [[UIImageView alloc]  initWithImage:[UIImage imageNamed:@"Twitter_Social_Icon_Blue.png"]];
+    imageView.frame = CGRectMake(0, 0, 40, 40);
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    profileViewController.navigationItem.titleView = imageView;
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:profileViewController];
     return navigationController;
 }
 
@@ -147,9 +153,10 @@
     }
     tweetViewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_create.png"] style:UIBarButtonItemStylePlain target:self action:@selector(pushCreateTweetView)];
     tweetViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Log Out" style:UIBarButtonItemStylePlain target:self action:@selector(logout)];
-    // TODO: Fix the size of the image
-//    UIImage *img = [UIImage imageNamed:@"Twitter_Social_Icon_Blue.png"];
-//    tweetViewController.navigationItem.titleView = [[UIImageView alloc]  initWithImage:img];
+    UIImageView *imageView = [[UIImageView alloc]  initWithImage:[UIImage imageNamed:@"Twitter_Social_Icon_Blue.png"]];
+    imageView.frame = CGRectMake(0, 0, 40, 40);
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    tweetViewController.navigationItem.titleView = imageView;
     return tweetViewController;
 }
 
@@ -158,8 +165,7 @@
 - (ProfileViewController *)profileViewController {
     ProfileViewController *profileViewController = [[ProfileViewController alloc]
                                                     initWithNibName:@"ProfileViewController" bundle:nil];
-    profileViewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_create.png"] style:UIBarButtonItemStylePlain target:self action:@selector(pushCreateTweetView)];
-    return profileViewController;
+        return profileViewController;
 }
 
 - (TweetDetailViewController *)tweetDetailViewController {

@@ -9,6 +9,7 @@
 #import "ProfileViewController.h"
 #import <UIImageView+AFNetworking.h>
 
+
 @interface ProfileViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *backgroudImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
@@ -19,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *followerCount;
 @property (weak, nonatomic) IBOutlet UILabel *followingCount;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bacgroundImageViewTopConstraint;
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 
 @end
 
@@ -97,6 +99,8 @@
     self.tweetCount.text = [NSString stringWithFormat:@"%@ Tweets", self.user.tweetsCount];
     self.followerCount.text = [NSString stringWithFormat:@"%@ Followers", self.user.followersCount];
     self.followingCount.text = [NSString stringWithFormat:@"%@ Following", self.user.friendsCount];
+    self.locationLabel.text = self.user.location;
+    
     [self.view setNeedsUpdateConstraints];    
 }
 

@@ -18,6 +18,7 @@
 @property (nonatomic,strong) NSString *friendsCount;
 @property (nonatomic,strong) NSString *tweetsCount;
 @property (nonatomic,strong) NSString *backgroudImageUrl;
+@property (nonatomic,strong) NSString *location;
 
 @property (class, nonatomic, assign, readonly) UserModel *currentUser;
 

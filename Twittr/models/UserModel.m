@@ -28,6 +28,7 @@
         self.friendsCount = dictionary[@"friends_count"];
         self.tweetsCount = dictionary[@"statuses_count"];
         self.backgroudImageUrl = dictionary[@"profile_banner_url"];
+        self.location = dictionary[@"location"];
         
         self.userDataDictionary = dictionary;
     }
