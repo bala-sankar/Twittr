@@ -10,11 +10,15 @@
 #import "UserModel.h"
 #import "TweetListViewController.h"
 #import "LoginViewController.h"
+#import "ProfileViewController.h"
+#import "TweetDetailViewController.h"
+#import "TwitterClient.h"
 
 @interface NavigationManager()
 
 @property (nonatomic, assign, readonly) BOOL isLoggedIn;
-@property (nonatomic, strong) UINavigationController *navigationController;
+@property (nonatomic, strong) UINavigationController *mainNavigationController;
+@property (nonatomic, strong) UITabBarController *mainTabBarController;
 
 @end
 
@@ -41,37 +45,109 @@
     } else {
         viewController = [self loginViewController];
     }
-    self.navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
-    self.navigationController.navigationBarHidden = YES;
-    return self.navigationController;
+    self.mainNavigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    self.mainNavigationController.navigationBarHidden = YES;
+    return self.mainNavigationController;
 }
+
+
+- (UIViewController *)mainTabViewController {
+    UINavigationController *tweetNavigationController = [self tweetListNavigationController:NO];
+    UINavigationController *profileNavigationController = [self profileNavigationController];
+    UINavigationController *mentionsNavigationController = [self tweetListNavigationController:YES];
+    
+    // create tab item
+    UITabBarItem *tweetListItem = [[UITabBarItem alloc] initWithTitle:@"Home" image:[UIImage imageNamed:@"ic_home.png"] tag:0];
+    tweetNavigationController.tabBarItem = tweetListItem;
+    
+    UITabBarItem *mentionListItem = [[UITabBarItem alloc] initWithTitle:@"Mentions" image:[UIImage imageNamed:@"ic_notifications.png"] tag:1];
+    mentionsNavigationController.tabBarItem = mentionListItem;
+    
+    UITabBarItem *profileItem = [[UITabBarItem alloc] initWithTitle:@"Profile" image:[UIImage imageNamed:@"ic_person.png"] tag:2];
+    profileNavigationController.tabBarItem = profileItem;
+
+    self.mainTabBarController = [[UITabBarController alloc] init];
+    self.mainTabBarController.viewControllers = @[tweetNavigationController, mentionsNavigationController, profileNavigationController];
+    return self.mainTabBarController;
+}
+
+// Navigation methods
+
+- (void)logout {
+    // Remove access token
+    [[TwitterClient sharedInstance].requestSerializer removeAccessToken];
+    
+    // Remove current user
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:nil forKey:@"current_user_data"];
+    [defaults synchronize];
+    
+    // Call login controller
+    self.mainNavigationController.viewControllers = @[[self loginViewController]];
+}
+
+- (void)login {
+    // Call main tab view controller
+    self.mainNavigationController.viewControllers = @[[self mainTabViewController]];
+}
+
+- (void)pushView:(TweetViewType) tweetViewType {
+    UINavigationController *navigationViewController = (UINavigationController *)(self.mainTabBarController.selectedViewController);
+    switch (tweetViewType) {
+        case TweetViewTypeDetail:
+            [navigationViewController pushViewController:[self tweetDetailViewController] animated:YES];
+            break;
+    }
+}
+
+
+// Navigation Controllers
+
+- (UINavigationController *)tweetListNavigationController:(BOOL) isMentionsView {
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[self tweetViewController:isMentionsView]];
+    return navigationController;
+}
+
+- (UINavigationController *)profileNavigationController {
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[self profileViewController]];
+    return navigationController;
+}
+
+// View Controllers
 
 - (UIViewController *)loginViewController {
     LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
     return loginViewController;
 }
 
-- (UIViewController *)tweetViewController {
+- (UIViewController *)tweetViewController:(BOOL) isMentionsView {
     TweetListViewController *tweetViewController = [[TweetListViewController alloc]
                                                     initWithNibName:@"TweetListViewController" bundle:nil];
+    if (isMentionsView) {
+        tweetViewController.restorationIdentifier = @"mentions";
+    } else {
+        tweetViewController.restorationIdentifier = @"home";
+    }
+    tweetViewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_create.png"] style:UIBarButtonItemStylePlain target:nil action:nil];
+    tweetViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Log Out" style:UIBarButtonItemStylePlain target:self action:@selector(logout)];
+    // TODO: Fix the size of the image
+//    UIImage *img = [UIImage imageNamed:@"Twitter_Social_Icon_Blue.png"];
+//    tweetViewController.navigationItem.titleView = [[UIImageView alloc]  initWithImage:img];
     return tweetViewController;
 }
 
-- (UIViewController *)mainTabViewController {
-    UIViewController *tweetNavigationController = [self tweetListNavigationController];
-    
-    // create tab item
-    UITabBarItem *tweetListItem = [[UITabBarItem alloc] initWithTitle:@"Home" image:nil tag:0];
-    tweetNavigationController.tabBarItem = tweetListItem;
 
-    UITabBarController *mainTabBarController = [[UITabBarController alloc] init];
-    mainTabBarController.viewControllers = @[tweetNavigationController];
-    return mainTabBarController;
+
+- (UIViewController *)profileViewController {
+    ProfileViewController *profileViewController = [[ProfileViewController alloc]
+                                                    initWithNibName:@"ProfileViewController" bundle:nil];
+    return profileViewController;
 }
 
-- (UIViewController *)tweetListNavigationController {
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[self tweetViewController]];
-    return navigationController;
+- (UIViewController *)tweetDetailViewController {
+    TweetDetailViewController *tweetDetailViewController = [[TweetDetailViewController alloc]
+                                                    initWithNibName:@"TweetDetailViewController" bundle:nil];
+    return tweetDetailViewController;
 }
 
 @end

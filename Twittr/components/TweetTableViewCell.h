@@ -12,7 +12,17 @@
 @interface TweetTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) TweetModel *tweet;
+@property (weak, nonatomic) id delegate;
 
 - (void) refreshData;
 
 @end
+
+@protocol TweetTableViewCellDelegate<NSObject>
+
+- (void)didTapTweet:(TweetTableViewCell *)tableViewCell Tweet:(TweetModel *)tweet;
+- (void)didTapImage:(TweetTableViewCell *)tableViewCell User:(UserModel *)user;
+
+@end
+
+

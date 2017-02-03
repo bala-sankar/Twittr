@@ -15,8 +15,16 @@
     self = [super init];
     if (self)
     {
-        self.text = dictionary[@"text"];
-        self.author = [[UserModel alloc] initWithDictionary: dictionary[@"user"]];
+        bool isRetweet = (dictionary[@"retweeted_status"] != nil);
+        NSDictionary *fields = dictionary;
+        self.retweet = NO;
+        if (isRetweet) {
+            fields = dictionary[@"retweeted_status"];
+            self.retweet = YES;
+        }
+        self.text = fields[@"text"];
+        self.author = [[UserModel alloc] initWithDictionary: fields[@"user"]];
+        self.user = [[UserModel alloc] initWithDictionary: dictionary[@"user"]];
         NSString *createdAtString = dictionary[@"created_at"];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         dateFormatter.dateFormat = @"EEE MMM d HH:mm:ss Z y";

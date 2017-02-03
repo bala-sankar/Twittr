@@ -14,6 +14,8 @@
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) NSDate *createdAt;
 @property (nonatomic, strong) UserModel *author;
+@property (nonatomic, assign) BOOL retweet;
+@property (nonatomic, strong) UserModel *user;
 
 -(instancetype) initWithDictionary:(NSDictionary *)dictionary;
 

@@ -9,6 +9,7 @@
 #import "TweetTableViewCell.h"
 #import <DateTools/NSDate+DateTools.h>
 #import <UIImageView+AFNetworking.h>
+#import "NavigationManager.h"
 
 @interface TweetTableViewCell ()
 
@@ -18,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *timestampLabel;
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *retweetContainerHeightConstraint;
+@property (weak, nonatomic) IBOutlet UILabel *retweetLabel;
+@property (weak, nonatomic) IBOutlet UIView *contentContainer;
 
 @end
 
@@ -26,6 +29,13 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    
+    UITapGestureRecognizer *imageTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTapImage)];
+    [self.profileImageView addGestureRecognizer:imageTap];
+    
+    UITapGestureRecognizer *contentTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTapTweet)];
+    [self.contentContainer addGestureRecognizer:contentTap];
+    
     [self refreshData];
     
 }
@@ -68,9 +78,23 @@
                                      }];
     }
     
-    self.retweetContainerHeightConstraint.constant = 0;
+    if (self.tweet.retweet) {
+        self.retweetContainerHeightConstraint.constant = 15;
+        self.retweetLabel.text = [NSString stringWithFormat:@"%@ retweeted",self.tweet.user.screenName];
+    } else {
+        self.retweetContainerHeightConstraint.constant = 0;
+    }
     [self.contentView setNeedsUpdateConstraints];
-    
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+
+}
+
+- (void)onTapTweet {
+    [self.delegate didTapTweet:self Tweet:self.tweet];
+}
+
+- (void)onTapImage {
+    [self.delegate didTapImage:self User:self.tweet.author];
 }
 
 @end

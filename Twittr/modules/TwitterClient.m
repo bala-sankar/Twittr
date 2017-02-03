@@ -8,8 +8,8 @@
 
 #import "TwitterClient.h"
 
-NSString * const kTwitterConsumerKey = @"l3RPoWnTwVRvbAuClXuYwlWUq";
-NSString * const kTwitterConsumerSecret = @"WxWb2jEOU9SfyrEchK7GoyRnyWlN1Nqy3ioziirEKKl7UATszg";
+NSString * const kTwitterConsumerKey = @"hC7WFvnUM01rNI9mh1EggdygR";
+NSString * const kTwitterConsumerSecret = @"1E5cpQzXCcqVhGSldsmbmfOLsOhs66YanQhTc0eu9CI08yPdzm";
 NSString * const kTwitterBaseUrl = @"https://api.twitter.com/";
 
 @interface TwitterClient ()
