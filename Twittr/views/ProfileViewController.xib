@@ -22,6 +22,7 @@
                 <outlet property="nameLabel" destination="C5j-IO-SQb" id="0KX-2B-Bsj"/>
                 <outlet property="profileImageView" destination="HFC-8H-qJa" id="S8D-Q2-WA1"/>
                 <outlet property="tweetCount" destination="Ycp-Mv-yAc" id="P3G-6F-ahp"/>
+                <outlet property="tweetListTableView" destination="j5f-Jl-1FN" id="vIC-Ld-k8I"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -59,7 +60,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twD-2m-sVZ" userLabel="Separator - 1">
-                    <rect key="frame" x="19" y="251.5" width="337.5" height="0.0"/>
+                    <rect key="frame" x="19" y="251.5" width="338" height="0.0"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" id="TV5-o2-F1i"/>
@@ -69,13 +70,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSM-Oa-MLB">
-                    <rect key="frame" x="30" y="261.5" width="314.5" height="16.5"/>
+                    <rect key="frame" x="30" y="261.5" width="315" height="16.5"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBN-1a-FF0" userLabel="Separator - 2">
-                    <rect key="frame" x="18" y="318" width="337.5" height="1"/>
+                    <rect key="frame" x="18" y="318" width="338" height="1"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="Z6L-yf-WFO"/>
@@ -96,7 +97,7 @@
                     </subviews>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAL-Du-xct" userLabel="Separator - 3">
-                    <rect key="frame" x="18" y="356" width="337.5" height="1"/>
+                    <rect key="frame" x="18" y="356" width="338" height="1"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="ZdZ-Nc-NRY"/>
@@ -123,7 +124,7 @@
                     </subviews>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3k-QJ-wVH" userLabel="Separator - 4">
-                    <rect key="frame" x="18" y="394" width="337.5" height="1"/>
+                    <rect key="frame" x="18" y="394" width="338" height="1"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="GHA-rE-h7f"/>
@@ -132,6 +133,10 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j5f-Jl-1FN" userLabel="Tweet Table View">
+                    <rect key="frame" x="0.0" y="435" width="375" height="182"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -146,9 +151,12 @@
                 <constraint firstItem="HFC-8H-qJa" firstAttribute="centerY" secondItem="Yja-LW-zna" secondAttribute="bottom" id="Hmf-bL-E77"/>
                 <constraint firstItem="wBN-1a-FF0" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.9" id="Nno-Cx-qeW"/>
                 <constraint firstItem="Yja-LW-zna" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="Ocg-gn-y2Z"/>
+                <constraint firstItem="j5f-Jl-1FN" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Onb-ng-FfT"/>
                 <constraint firstItem="Q3k-QJ-wVH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Psl-82-kG4"/>
                 <constraint firstItem="NSM-Oa-MLB" firstAttribute="top" secondItem="twD-2m-sVZ" secondAttribute="bottom" constant="10" id="RMp-p8-FqZ"/>
                 <constraint firstItem="Q3k-QJ-wVH" firstAttribute="top" secondItem="uP1-H7-mXf" secondAttribute="bottom" constant="10" id="Sj2-Mt-oLU"/>
+                <constraint firstItem="j5f-Jl-1FN" firstAttribute="top" secondItem="Q3k-QJ-wVH" secondAttribute="bottom" constant="40" id="VyO-ox-BpP"/>
+                <constraint firstAttribute="bottom" secondItem="j5f-Jl-1FN" secondAttribute="bottom" constant="50" id="WlG-7s-87G"/>
                 <constraint firstItem="HFC-8H-qJa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="aFJ-Do-DQx"/>
                 <constraint firstItem="Hzx-Nd-Dst" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="cdU-nq-ASb"/>
                 <constraint firstItem="twD-2m-sVZ" firstAttribute="top" secondItem="s0j-w1-5wh" secondAttribute="bottom" constant="10" id="d4v-Zy-AqD"/>
@@ -160,6 +168,7 @@
                 <constraint firstItem="NSM-Oa-MLB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pwS-CR-EK4"/>
                 <constraint firstItem="YAL-Du-xct" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.9" id="q9L-wa-dqj"/>
                 <constraint firstItem="uP1-H7-mXf" firstAttribute="top" secondItem="YAL-Du-xct" secondAttribute="bottom" constant="10" id="qBm-NN-xId"/>
+                <constraint firstItem="j5f-Jl-1FN" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="qfk-A1-CGQ"/>
                 <constraint firstItem="uP1-H7-mXf" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="qzK-js-tmn"/>
                 <constraint firstItem="YAL-Du-xct" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tBZ-I7-w8a"/>
                 <constraint firstItem="Yja-LW-zna" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vDr-pM-zib"/>
