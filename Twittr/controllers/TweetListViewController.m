@@ -72,9 +72,7 @@
 }
 
 - (void)didTapImage:(TweetTableViewCell *)tableViewCell User:(UserModel *)user {
-    NSLog(@"User: %@", user.name);
+     [[NavigationManager sharedInstance] pushProfileView:user];
 }
-
-
 
 @end

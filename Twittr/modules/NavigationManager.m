@@ -98,6 +98,13 @@
     [navigationViewController pushViewController:tweetDetailViewController animated:YES];
 }
 
+- (void)pushProfileView:(UserModel *) user {
+    UINavigationController *navigationViewController = (UINavigationController *)(self.mainTabBarController.selectedViewController);
+    ProfileViewController *profileViewController = [self profileViewController];
+    profileViewController.user = user;
+    [navigationViewController pushViewController:profileViewController animated:YES];
+}
+
 
 // Navigation Controllers
 
@@ -107,18 +114,20 @@
 }
 
 - (UINavigationController *)profileNavigationController {
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[self profileViewController]];
+    ProfileViewController *profileController = [self profileViewController];
+    profileController.user = UserModel.currentUser;
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:profileController];
     return navigationController;
 }
 
 // View Controllers
 
-- (UIViewController *)loginViewController {
+- (LoginViewController *)loginViewController {
     LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
     return loginViewController;
 }
 
-- (UIViewController *)tweetViewController:(BOOL) isMentionsView {
+- (TweetListViewController *)tweetViewController:(BOOL) isMentionsView {
     TweetListViewController *tweetViewController = [[TweetListViewController alloc]
                                                     initWithNibName:@"TweetListViewController" bundle:nil];
     if (isMentionsView) {
@@ -136,13 +145,14 @@
 
 
 
-- (UIViewController *)profileViewController {
+- (ProfileViewController *)profileViewController {
     ProfileViewController *profileViewController = [[ProfileViewController alloc]
                                                     initWithNibName:@"ProfileViewController" bundle:nil];
+    profileViewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_create.png"] style:UIBarButtonItemStylePlain target:nil action:nil];
     return profileViewController;
 }
 
-- (UIViewController *)tweetDetailViewController {
+- (TweetDetailViewController *)tweetDetailViewController {
     TweetDetailViewController *tweetDetailViewController = [[TweetDetailViewController alloc]
                                                     initWithNibName:@"TweetDetailViewController" bundle:nil];
     return tweetDetailViewController;

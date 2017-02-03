@@ -10,6 +10,8 @@
 
 @interface UserModel()
 
+@property (nonatomic, strong) NSDictionary *userDataDictionary;
+
 @end
 
 @implementation UserModel
@@ -22,14 +24,19 @@
         self.screenName = dictionary[@"screen_name"];
         self.imageUrl = dictionary[@"profile_image_url"];
         self.tagLine = dictionary[@"description"];
-        [self saveUserData:dictionary];
+        self.followersCount = dictionary[@"followers_count"];
+        self.friendsCount = dictionary[@"friends_count"];
+        self.tweetsCount = dictionary[@"statuses_count"];
+        self.backgroudImageUrl = dictionary[@"profile_banner_url"];
+        
+        self.userDataDictionary = dictionary;
     }
     return self;
 }
 
-- (void)saveUserData: (NSDictionary *) dictionary {
+- (void)saveCurrentUserData {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:dictionary] forKey:@"current_user_data"];
+    [defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:self.userDataDictionary] forKey:@"current_user_data"];
     [defaults synchronize];
 }
 

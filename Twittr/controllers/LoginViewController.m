@@ -31,6 +31,7 @@
         if (user != nil) {
             // Success
             NSLog(@"Welcome use:%@", user.name);
+            [user saveCurrentUserData];
             [[NavigationManager sharedInstance] login];
         } else {
             // Error

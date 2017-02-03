@@ -80,7 +80,7 @@
     } else {
         self.retweetContainerHeightConstraint.constant = 0;
     }
-    self.retweetContainerTopConstraint.constant = self.navigationController.navigationBar.bounds.size.height + 30;
+    self.retweetContainerTopConstraint.constant = self.navigationController.navigationBar.frame.size.height + 30;
     self.favoriteCountLabel.text = [NSString stringWithFormat:@"%@ Likes", self.tweet.favoriteCount];
     self.retweetsCountLabel.text = [NSString stringWithFormat:@"%@ Retweets", self.tweet.retweetCount];
     [self.view setNeedsUpdateConstraints];    
