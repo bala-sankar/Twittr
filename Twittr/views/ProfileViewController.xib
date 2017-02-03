@@ -134,7 +134,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j5f-Jl-1FN" userLabel="Tweet Table View">
-                    <rect key="frame" x="0.0" y="435" width="375" height="182"/>
+                    <rect key="frame" x="0.0" y="400" width="375" height="217"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
@@ -155,7 +155,7 @@
                 <constraint firstItem="Q3k-QJ-wVH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Psl-82-kG4"/>
                 <constraint firstItem="NSM-Oa-MLB" firstAttribute="top" secondItem="twD-2m-sVZ" secondAttribute="bottom" constant="10" id="RMp-p8-FqZ"/>
                 <constraint firstItem="Q3k-QJ-wVH" firstAttribute="top" secondItem="uP1-H7-mXf" secondAttribute="bottom" constant="10" id="Sj2-Mt-oLU"/>
-                <constraint firstItem="j5f-Jl-1FN" firstAttribute="top" secondItem="Q3k-QJ-wVH" secondAttribute="bottom" constant="40" id="VyO-ox-BpP"/>
+                <constraint firstItem="j5f-Jl-1FN" firstAttribute="top" secondItem="Q3k-QJ-wVH" secondAttribute="bottom" constant="5" id="VyO-ox-BpP"/>
                 <constraint firstAttribute="bottom" secondItem="j5f-Jl-1FN" secondAttribute="bottom" constant="50" id="WlG-7s-87G"/>
                 <constraint firstItem="HFC-8H-qJa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="aFJ-Do-DQx"/>
                 <constraint firstItem="Hzx-Nd-Dst" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="cdU-nq-ASb"/>
